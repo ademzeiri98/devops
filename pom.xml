@@ -92,10 +92,7 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
         </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
+        
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
@@ -124,7 +121,7 @@
 <repository>
 <id>deploymentRepo</id>
 <name>Nexus repository</name>
-<url>http://192.168.1.94:8081/repository/demo/</url>
+<url>http://192.168.1.11:8081/repository/demo/</url>
 </repository>
 </distributionManagement>
 
