@@ -6,7 +6,7 @@ pipeline {
                    
                 steps{
                         echo 'Pulling...';
-                        git branch: 'adem',
+                        git branch: 'jawhar',
                         url : 'https://github.com/ademzeiri98/devops.git';
                     }
                 }
@@ -32,7 +32,7 @@ pipeline {
         }
          stage('SonarQube analysis 1') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=adem'
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=enajawher98'
             }
         }
         stage('JUnit and Mockito Test'){
@@ -54,20 +54,20 @@ pipeline {
         stage('Docker build')
         {
             steps {
-                 sh 'docker build -t h123abidi/achat  .'
+                 sh 'docker build -t jawherbalti/devops  .'
             }
         }
         stage('Docker login')
         {
             steps {
-                sh 'echo $dockerhub_PSW | docker login -u h123abidi -p dckr_pat_JNwXVh3lgf36cdiVz3RnBgU6aQ4'
+                sh 'echo $dockerhub_PSW | docker login -u jawherbalti -p dckr_pat_SQnD7G_8ehc8XlRnvF8ztfA_JMo'
             }    
        
         }
       stage('Push') {
 
 			steps {
-				sh 'docker push h123abidi/achat'
+				sh 'docker push jawherbalti/devops'
 			}
 		}
 		stage('NEXUS') {
