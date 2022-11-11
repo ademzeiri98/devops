@@ -35,21 +35,6 @@ pipeline {
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=enajawher98'
             }
         }
-        stage('JUnit and Mockito Test'){
-            steps{
-                script
-                {
-                    if (isUnix())
-                    {
-                        sh 'mvn --batch-mode test'
-                    }
-                    else
-                    {
-                        bat 'mvn --batch-mode test'
-                    }
-                }
-            }
-        }
         
         stage('Docker build')
         {
@@ -60,7 +45,7 @@ pipeline {
         stage('Docker login')
         {
             steps {
-                sh 'echo $dockerhub_PSW | docker login -u jawherbalti -p dckr_pat_SQnD7G_8ehc8XlRnvF8ztfA_JMo'
+                sh 'echo $dockerhub_PSW | docker login -u jawherbalti -p dckr_pat_JicCkO5pA_74j9UVigYMA_2UDLo'
             }    
        
         }
