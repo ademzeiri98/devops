@@ -11,7 +11,7 @@ pipeline {
                     }
                 }
        
-        stage('Testing maven') {
+        stage(' maven test') {
             steps {
                 sh """mvn -version"""
                  
@@ -30,7 +30,7 @@ pipeline {
                  
             }
         }
-         stage('SonarQube analysis 1') {
+         stage('SonarQube ') {
             steps {
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=enajawher98'
             }
@@ -70,6 +70,7 @@ pipeline {
 				sh 'docker push jawherbalti/devops'
 			}
 		}
+		
 		stage('NEXUS') {
             steps {
                 sh 'mvn deploy -DskipTests -e'
@@ -77,7 +78,7 @@ pipeline {
             }
         }
         
-       stage('Run app With DockerCompose') {
+       stage('Run  DockerCompose') {
               steps {
                   sh "docker-compose -f docker-compose.yml up -d  "
               }
