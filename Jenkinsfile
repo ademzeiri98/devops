@@ -60,7 +60,7 @@ pipeline {
         stage('Docker login')
         {
             steps {
-                sh 'echo $dockerhub_PSW | docker login -u adem011 -p dckr_pat_AO_In6Dq9HfIU0o-gsWcsTzG2C4'
+                sh 'echo $dockerhub_PSW | docker login -u adem011 -p dckr_pat_1mAPIqQXEooRkqKnA-GDGxdiOOI'
             }    
        
         }
